@@ -44,7 +44,6 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Desktop Button */}
         <div className="hidden md:flex">
           {!user ? (
             <button
@@ -63,7 +62,6 @@ const Navbar = () => {
           )}
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden p-2 rounded-md hover:bg-gray-100 transition"
@@ -72,7 +70,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {open && (
         <div className="md:hidden bg-white shadow-md">
           <div className="flex flex-col items-start px-6 py-4 gap-3">

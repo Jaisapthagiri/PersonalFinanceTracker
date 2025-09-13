@@ -11,7 +11,6 @@ const TransactionForm = ({ transaction, categories = [] }) => {
     category: transaction?.category?._id || transaction?.category || "",
   });
 
-  // Prefill when editing
   useEffect(() => {
     if (transaction) {
       setForm({
@@ -39,7 +38,7 @@ const TransactionForm = ({ transaction, categories = [] }) => {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-      {/* Title */}
+
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-1">
           Title
@@ -55,7 +54,6 @@ const TransactionForm = ({ transaction, categories = [] }) => {
         />
       </div>
 
-      {/* Amount */}
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-1">
           Amount (₹)
@@ -71,7 +69,6 @@ const TransactionForm = ({ transaction, categories = [] }) => {
         />
       </div>
 
-      {/* Date */}
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-1">
           Date
@@ -85,7 +82,6 @@ const TransactionForm = ({ transaction, categories = [] }) => {
         />
       </div>
 
-      {/* Category */}
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-1">
           Category
@@ -106,7 +102,6 @@ const TransactionForm = ({ transaction, categories = [] }) => {
         </select>
       </div>
 
-      {/* Submit button */}
       <button
         type="submit"
         className="mt-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg shadow transition-colors"

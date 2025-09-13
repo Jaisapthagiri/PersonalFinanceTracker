@@ -23,9 +23,9 @@ const footerLinks = [
 const Footer = () => {
   return (
     <div className="px-6 md:px-16 lg:px-24 xl:px-32 mt-24 bg-gray-900 text-gray-300 m-2">
-      {/* top part */}
+
       <div className="flex flex-col md:flex-row items-start justify-between gap-10 py-10 border-b border-green-600">
-        {/* Logo + About */}
+
         <div className="flex flex-col max-w-[400px]">
           <h2 className="text-2xl font-bold text-green-400 mb-4">
             Finance Tracker
@@ -36,7 +36,6 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Links */}
         <div className="flex flex-wrap justify-between w-full md:w-[50%] gap-8">
           {footerLinks.map((section, index) => (
             <div key={index}>
@@ -59,7 +58,6 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Newsletter */}
         <div className="flex flex-col max-w-sm">
           <h3 className="text-green-400 font-semibold mb-4 text-base">
             Stay Updated

@@ -12,12 +12,11 @@ import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    // pt-16 offsets the fixed navbar
+
     <div className="min-h-screen bg-gray-50 text-gray-700 pt-16 flex flex-col">
       <Navbar />
       <Toaster />
 
-      {/* main content area */}
       <div className="flex-1 px-6 md:px-16 lg:px-24 xl:px-32 py-6">
         <Routes>
           <Route path="/" element={<Home />} />

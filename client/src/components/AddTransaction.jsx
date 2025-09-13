@@ -37,7 +37,7 @@ const AddTransaction = () => {
           Add Transaction
         </h2>
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-          {/* Title */}
+
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Title
@@ -52,7 +52,6 @@ const AddTransaction = () => {
             />
           </div>
 
-          {/* Amount */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Amount (₹)
@@ -68,7 +67,6 @@ const AddTransaction = () => {
             />
           </div>
 
-          {/* Date */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Date
@@ -82,7 +80,6 @@ const AddTransaction = () => {
             />
           </div>
 
-          {/* Category */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Category
@@ -103,7 +100,6 @@ const AddTransaction = () => {
             </select>
           </div>
 
-          {/* Submit button */}
           <button
             type="submit"
             className="mt-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg shadow transition-colors"
