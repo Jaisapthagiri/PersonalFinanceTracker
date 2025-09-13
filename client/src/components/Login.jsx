@@ -1,27 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useAppContext } from "../context/Appcontext";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const [state, setState] = useState("login");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const { loginUser, registerUser, user, navigate } = useAppContext();
 
+  useEffect(() => {
+    if (user) navigate("/");
+  }, [user, navigate]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (state === "login") {
-      await loginUser({ email, password });
-    } else {
-      await registerUser({ name, email, password });
-      setState("login");
+
+    if (password.length < 8) {
+      toast.error("Password must be at least 8 characters long");
+      return;
     }
 
-    useEffect(() => {
-      if (user) navigate("/");
-    }, [user]);
+    if (state === "register" && password !== confirmPassword) {
+      toast.error("Passwords do not match");
+      return;
+    }
 
+    try {
+      if (state === "login") {
+        await loginUser({ email, password });
+      } else {
+        await registerUser({ name, email, password });
+        setState("login"); 
+      }
+    } catch (error) {
+      toast.error(error.message || "Something went wrong");
+    }
   };
 
   return (
@@ -71,6 +87,20 @@ const Login = () => {
           required
         />
       </div>
+
+      {state === "register" && (
+        <div className="w-full">
+          <p>Confirm Password</p>
+          <input
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            value={confirmPassword}
+            placeholder="retype password"
+            className="border border-gray-200 rounded w-full p-2 mt-1 outline-indigo-500"
+            type="password"
+            required
+          />
+        </div>
+      )}
 
       {state === "register" ? (
         <p>
