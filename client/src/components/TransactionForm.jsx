@@ -30,10 +30,11 @@ const TransactionForm = ({ transaction, categories = [] }) => {
     let ok;
     if (transaction) {
       ok = await updateTransaction(transaction._id, form);
+      navigate("/transactions");
     } else {
       ok = await addTransaction(form);
+      navigate("/transactions");
     }
-    if (ok) navigate("/transactions");
   };
 
   return (
