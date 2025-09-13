@@ -12,7 +12,7 @@ const port = 4000 || process.env.PORT
 
 await connectDb()
 
-const allowedOrigins = ['http://localhost:5173']
+const allowedOrigins = ['http://localhost:5173','https://personal-finance-tracker-owgz.vercel.app']
 
 app.use(cors({
     origin: allowedOrigins,
