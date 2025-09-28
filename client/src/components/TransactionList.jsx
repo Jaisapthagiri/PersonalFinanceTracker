@@ -48,7 +48,7 @@ const TransactionList = () => {
                 >
                   <td className="px-6 py-4 text-gray-700">{t.title}</td>
                   <td className="px-6 py-4 text-gray-700 font-medium">
-                    ₹{t.amount}
+                    ₹{t.amount.toLocaleString()}
                   </td>
                   <td className="px-6 py-4 text-gray-600">
                     {new Date(t.date).toLocaleDateString()}
